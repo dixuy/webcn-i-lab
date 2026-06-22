@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足球竞猜 · 持续关注与收藏指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #1e2a3a;
+            background: #f6f8fc;
+        }
+
+        /* 深色头图 hero */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1a2f44 100%);
+            color: #f0f4fa;
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #f6f8fc;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0.6rem auto 0;
+            font-size: 1.1rem;
+            color: #cbdae9;
+            font-weight: 300;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            background: #2b4b6e;
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #d4e2f0;
+            margin-top: 1rem;
+        }
+
+        /* 浅色正文区容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        /* 通用卡片样式 */
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 20, 40, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0b1a2e;
+            margin-bottom: 1rem;
+            border-left: 5px solid #2b6a9e;
+            padding-left: 1rem;
+        }
+
+        .section-sub {
+            color: #3f556b;
+            margin-bottom: 1.6rem;
+            font-size: 0.95rem;
+        }
+
+        /* 优势区 —— 网格卡片 */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .advantage-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 1.4rem 1.6rem;
+            border: 1px solid #e8ecf2;
+            transition: all 0.15s;
+        }
+
+        .advantage-item:hover {
+            border-color: #b6cde0;
+            background: #fafcfe;
+        }
+
+        .advantage-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #15324b;
+            margin-bottom: 0.5rem;
+        }
+
+        .advantage-item p {
+            font-size: 0.92rem;
+            color: #3f556b;
+        }
+
+        /* 说明区 两列灵活布局 */
+        .explain-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .explain-text {
+            flex: 2 1 300px;
+        }
+
+        .explain-text p {
+            margin-bottom: 0.9rem;
+        }
+
+        .explain-highlight {
+            flex: 1.2 1 200px;
+            background: #ecf3fa;
+            border-radius: 18px;
+            padding: 1.4rem 1.5rem;
+            border-left: 4px solid #2b6a9e;
+        }
+
+        .explain-highlight p {
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .explain-highlight strong {
+            color: #0b2c47;
+        }
+
+        /* FAQ摘要 */
+        .faq-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faq-list li {
+            padding: 0.9rem 0 0.8rem;
+            border-bottom: 1px solid #e7edf4;
+        }
+
+        .faq-list li:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #1d3b57;
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #3d5a75;
+        }
+
+        .faq-a a {
+            color: #1f6a9e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #a0bcd6;
+            padding-bottom: 1px;
+        }
+
+        .faq-a a:hover {
+            border-bottom-style: solid;
+            color: #0a4b77;
+        }
+
+        /* 底部链接区 */
+        .footer-links {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce3ec;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #3f556b;
+        }
+
+        .footer-links a {
+            color: #1f6a9e;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0 0.3rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            color: #6b7f96;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #1f6a9e;
+            transition: color 0.1s;
+        }
+
+        a:hover {
+            color: #0a4b77;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- hero 深色头图 -->
+<section class="hero">
+    <h1>足球竞猜 · 持续关注</h1>
+    <p>不止是浏览，更值得收藏与再次回来。整理过的信息源，让每次访问都有收获。</p>
+    <span class="tag">收藏夹常驻 · 长期更新</span>
+</section>
+
+<div class="container">
+
+    <!-- 优势区 -->
+    <div class="card">
+        <h2 class="section-title">为什么值得收藏</h2>
+        <p class="section-sub">从习惯性访问到形成参考路径，以下特点让这里更适合持续关注。</p>
+        <div class="advantage-grid">
+            <div class="advantage-item">
+                <h3>内容沉淀</h3>
+                <p>页面保持对核心信息的梳理，避免碎片化干扰。每次回来都能找到之前关注过的脉络。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>保持简洁</h3>
+                <p>没有弹窗、无关广告或频繁跳转。信息结构清晰，适合反复查阅与对比。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>稳定入口</h3>
+                <p>域名长期维护，链接结构一致。加入收藏夹后无需重新搜索，直接抵达。</p>
+            </div>
+            <div class="advantage-item">
+                <h3>持续整理</h3>
+                <p>不是一次性内容，页面会随着时间做必要的调整与补充，保持参考价值。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区 + 再次访问角度 -->
+    <div class="card">
+        <h2 class="section-title">再次访问的理由</h2>
+        <div class="explain-flex">
+            <div class="explain-text">
+                <p>很多时候我们浏览一个页面，看完就关，下次需要时却忘了在哪里。如果你对<strong>足球竞猜</strong>方面的信息有长期兴趣，把页面放进收藏夹，或者记住这个地址，能省去反复搜索的精力。</p>
+                <p>这里的内容不是为了一次性阅读，而是提供一个可以常回来的“基点”。每次打开，你不需要重新适应布局，信息焦点始终围绕你最关心的部分。无论是规则参考、术语整理，还是常见问题，都集中在同一个地方。</p>
+                <p>另外，网站会不定期对内容做微调和补充，但不会突然改变结构。这意味着你收藏的链接，下次打开依然熟悉，同时又可能发现一些新的细节。</p>
+            </div>
+            <div class="explain-highlight">
+                <p><strong>收藏提示</strong></p>
+                <p>在浏览器中将当前页面添加到书签，或者直接记住域名。下次想了解 <a href="https://chinese-zuqiu.com">足球竞猜</a> 相关内容时，就能直接从这里开始。</p>
+                <p style="margin-top: 0.8rem; font-size: 0.88rem;">没有强制注册，没有多余步骤。打开即看，关闭即走，下次再来。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2 class="section-title">常见问题 · 摘要</h2>
+        <p class="section-sub">以下摘录几个反复被问到的点，完整版本可在站内找到。</p>
+        <ul class="faq-list">
+            <li>
+                <span class="faq-q">这个网站是关于什么的？</span>
+                <span class="faq-a">主要围绕 <a href="https://chinese-zuqiu.com">足球竞猜</a> 提供整理后的信息参考，包括基础规则、常见概念和实用提示。不涉及具体推荐或保证。</span>
+            </li>
+            <li>
+                <span class="faq-q">内容多久更新一次？</span>
+                <span class="faq-a">不定期根据信息变化做修订，没有固定周期。但会保持页面稳定，不做突然的大幅改动。</span>
+            </li>
+            <li>
+                <span class="faq-q">需要注册或登录吗？</span>
+                <span class="faq-a">不需要。所有可见内容直接开放，无需注册、登录或留下个人信息。</span>
+            </li>
+            <li>
+                <span class="faq-q">我想把这个页面推荐给朋友，怎么介绍？</span>
+                <span class="faq-a">直接分享链接即可。可以说“有个关于 <a href="https://chinese-zuqiu.com">足球竞猜</a> 的信息页面，内容比较干净，适合常看”。</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <p>
+            <a href="https://chinese-zuqiu.com">足球竞猜</a> · 
+            <a href="#">收藏本页</a> · 
+            <span>持续关注</span>
+        </p>
+        <p class="footer-note">
+            内容仅供参考，不构成任何形式的引导。保持理性，健康浏览。
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
