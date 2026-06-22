@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足球竞猜 · 知识库与访问指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background: #f0f2f4;
+            color: #1e2a3a;
+            line-height: 1.65;
+            padding: 2rem 1.25rem;
+        }
+        .page-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        /* 标题区 */
+        .hero {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid #d8dee6;
+            padding-bottom: 1.75rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #13293d;
+        }
+        .hero p {
+            margin-top: 0.65rem;
+            font-size: 1.1rem;
+            color: #3a4b5e;
+        }
+        .hero small {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #6f7d8c;
+        }
+
+        /* 卡片系统 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.65rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e3e8ee;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
+            padding: 1.8rem 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1c334a;
+            border-left: 5px solid #2d6a9f;
+            padding-left: 0.9rem;
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.2rem 0 0.5rem;
+            color: #1e3b56;
+        }
+        .card p, .card li {
+            color: #2a3f55;
+        }
+        .card ul, .card ol {
+            padding-left: 1.5rem;
+            margin: 0.6rem 0 0.3rem;
+        }
+        .card li {
+            margin-bottom: 0.35rem;
+        }
+        .highlight-box {
+            background: #f5f8fc;
+            border-left: 4px solid #3b7bb0;
+            padding: 0.9rem 1.3rem;
+            border-radius: 8px;
+            margin: 1.2rem 0 0.4rem;
+            font-size: 0.98rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1c334a;
+            margin-bottom: 0.15rem;
+        }
+        .tag {
+            display: inline-block;
+            background: #e9eef3;
+            color: #1e3b56;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-right: 0.35rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .inline-link {
+            color: #1e6fa0;
+            text-decoration: none;
+            border-bottom: 1px dotted #9bb7d0;
+            font-weight: 500;
+        }
+        .inline-link:hover {
+            color: #0a4b78;
+            border-bottom: 1px solid #0a4b78;
+        }
+
+        /* 底部 */
+        .footer-note {
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #d8dee6;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5f6f80;
+        }
+
+        /* 响应式 */
+        @media (min-width: 680px) {
+            .card-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.65rem;
+            }
+            .card-grid .card:first-child {
+                grid-column: 1 / 2;
+            }
+            .card-grid .card:nth-child(2) {
+                grid-column: 2 / 3;
+            }
+            .card-grid .card:nth-child(3) {
+                grid-column: 1 / 3;
+            }
+            .card-grid .card:nth-child(4) {
+                grid-column: 1 / 3;
+            }
+        }
+        @media (max-width: 600px) {
+            body { padding: 1.25rem 0.9rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .card { padding: 1.5rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <header class="hero">
+        <h1>足球竞猜 · 简明知识库</h1>
+        <p>从基础认知到常用提醒，帮你快速建立对足球竞猜的整体印象。</p>
+        <small>版本 · 2025 &nbsp;|&nbsp; 内容整理自公开资料与社区指南</small>
+    </header>
+
+    <div class="card-grid">
+        <!-- 卡片1：概述与定位 -->
+        <div class="card">
+            <h2>📘 什么是足球竞猜</h2>
+            <p>足球竞猜是一种围绕足球比赛结果进行的预测活动，参与者根据对阵双方的实力、状态、历史数据等信息，对赛果、比分或特定事件做出判断。它不同于博彩，更多强调对足球本身的理解与分析。</p>
+            <div class="highlight-box">
+                🧭 如果你希望系统了解足球竞猜的规则、术语和常见赛事，可以访问 <a href="https://chn-zuqiu.com" class="inline-link">足球竞猜</a> 中的知识板块，那里整理了比较完整的入门内容。
+            </div>
+            <p style="margin-top: 0.6rem;">多数平台会提供即时赔率、球队动态、历史交锋等参考数据，但核心始终是个人对比赛的独立判断。</p>
+        </div>
+
+        <!-- 卡片2：快速入门提醒 -->
+        <div class="card">
+            <h2>⚙️ 访问前值得了解的三件事</h2>
+            <ul>
+                <li><strong>先看规则说明</strong> – 不同赛事、不同玩法（胜平负、让球、大小球等）的计数方式有差异，建议先阅读平台上的《玩法说明》。</li>
+                <li><strong>留意数据更新时间</strong> – 赛前首发名单、伤停信息、天气变化都会影响判断，尽量使用实时更新的数据源。</li>
+                <li><strong>合理分配关注时间</strong> – 足球竞猜适合作为看球时的辅助兴趣点，不建议过度投入精力或资金。</li>
+            </ul>
+            <p style="margin-top: 0.7rem;">🔔 更多细节提醒可参考 <a href="https://chn-zuqiu.com" class="inline-link">足球竞猜</a> 中的「访问须知」栏目。</p>
+        </div>
+
+        <!-- 卡片3：相关信息与常见问题 -->
+        <div class="card">
+            <h2>❓ 常见疑问摘要</h2>
+            <div class="faq-item">
+                <strong>Q：足球竞猜和赌博一样吗？</strong>
+                <p>本质上不同。足球竞猜更侧重赛事分析和知识运用，很多爱好者将其视为看球的延伸乐趣。但需注意，任何涉及金钱的行为都应保持理性，遵守当地法律法规。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q：新手应该从哪里开始？</strong>
+                <p>建议从熟悉联赛结构开始（如英超、西甲、意甲、德甲等），再了解常见盘口术语。很多平台有「新手教程」或「模拟竞猜」功能，可以先体验再参与实际预测。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q：如何评估一场比赛的可能性？</strong>
+                <p>可以关注：近期战绩、主客场表现、核心球员状态、战术风格相克程度、赛程密集度等。没有绝对准确的方法，但系统的信息收集总能提高判断质量。</p>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 0.95rem;">📎 更多问答整理在 <a href="https://chn-zuqiu.com" class="inline-link">足球竞猜</a> 的「FAQ」专区，定期补充新内容。</p>
+        </div>
+
+        <!-- 卡片4：场景示意与信息提示 -->
+        <div class="card">
+            <h2>📌 常见应用场景</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.7rem 1rem; margin-bottom: 0.8rem;">
+                <span class="tag">⚽ 周末五大联赛</span>
+                <span class="tag">🌍 国际杯赛</span>
+                <span class="tag">📊 数据复盘</span>
+                <span class="tag">🧠 战术分析</span>
+                <span class="tag">📰 赛前简报</span>
+                <span class="tag">🔁 串关思路</span>
+            </div>
+            <p>这些场景覆盖了从日常观赛到深度研究的多个层面。无论你是只看重头戏，还是想跟踪次级联赛，都可以找到对应的信息模块。</p>
+            <div class="highlight-box" style="margin-top: 0.8rem;">
+                💡 提示：<a href="https://chn-zuqiu.com" class="inline-link">足球竞猜</a> 提供按联赛、按日期筛选的赛程列表，方便快速定位目标比赛。同时留意页面上的「公告栏」，有时会发布数据源调整或玩法更新的说明。
+            </div>
+            <p style="margin-top: 0.6rem;">另外，部分平台设有用户讨论区，可以交流看法，但请保持互相尊重的氛围。</p>
+        </div>
+    </div>
+
+    <footer class="footer-note">
+        <p>内容仅供学习参考，不构成任何形式的建议。请根据自身情况理性参与。</p>
+        <p style="margin-top: 0.25rem;">© 2025 · 知识库入口 · 信息持续修订中</p>
+    </footer>
+</div>
+</body>
+</html>
